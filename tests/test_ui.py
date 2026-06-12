@@ -13,7 +13,7 @@ def test_frontend_sentiment():
     driver = webdriver.Chrome(options=options)
 
     try:
-        driver.get("http://localhost:32500")
+        driver.get("http://localhost5000")
         time.sleep(2)
 
         text_input = driver.find_element(By.ID, "text-input")
