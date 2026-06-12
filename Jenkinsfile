@@ -39,7 +39,7 @@ pipeline {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 sh 'docker tag sentiment-api:unstable $DOCKERHUB_USER/sentiment-api:unstable'
                 sh 'docker push $DOCKERHUB_USER/sentiment-api:unstable'
-                sh 'docker build -t $DOCKERHUB_USER/sentiment-api:stable https://github.com/ayeshaaaaaaaaaa78/selfhealing-mlops-FA23-BAI-009.git#stable-fallback'
+                sh 'docker tag sentiment-api:unstable $DOCKERHUB_USER/sentiment-api:stable'
                 sh 'docker push $DOCKERHUB_USER/sentiment-api:stable'
             }
         }
