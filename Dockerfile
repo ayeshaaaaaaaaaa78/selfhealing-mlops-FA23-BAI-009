@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirements.txt .
 
-# ✅ FIXED (removed --no-deps)
 RUN pip install --no-cache-dir torch==2.3.0+cpu --index-url https://download.pytorch.org/whl/cpu \
     && pip install --no-cache-dir -r requirements.txt
 
@@ -21,8 +20,6 @@ RUN mkdir -p /app/logs
 
 EXPOSE 5000
 
-# ✅ better logging (optional but good)
 ENV PYTHONUNBUFFERED=1
 
 CMD ["python", "-u", "app.py"]
-``
