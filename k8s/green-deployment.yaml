@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: sentiment-api
-          image: <dockerhub-user>/sentiment-api:stable
+          image: angrygirl/sentiment-api:stable
           ports:
             - containerPort: 5000
