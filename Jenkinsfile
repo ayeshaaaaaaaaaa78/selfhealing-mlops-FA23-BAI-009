@@ -18,7 +18,7 @@ pipeline {
                 sh 'docker build -t sentiment-api:unstable .'
                 sh 'docker rm -f sentiment-test || true'
                 sh 'docker run -d --init --name sentiment-test -p 5000:5000 sentiment-api:unstable'
-                sh 'sleep 60'
+                sh 'sleep 120'
             }
         }
 
